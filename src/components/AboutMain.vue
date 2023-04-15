@@ -1,21 +1,21 @@
 <template>
-    <div>
-        It wasn't until I was in my late-30s before being diagnosed with ADHD.
+    <h3>The app aims to give you superpowers</h3>
+    <div class="grid">
+        <div></div>
+        <div>🎉 <br> deal with everyday distractions</div>
+        <div>✅ <br> keep track of all the things</div>
+        <div>⭐ <br> finish your personal projects</div>
+        <div></div>
     </div>
-    <div>
-        <h3>The app aims to give you the following superpowers:</h3>
-        <ul style="list-style-type:none;">
-            <li>🎉 deal with everyday distractions</li>
-            <li>✅ keep track of the things you have to do</li>
-            <li>👽 help you make real progress on your personal projects</li>
-        </ul>
+    <br />
+    <div class="grid">
+        <div>
+            <h5>I was in my late-30s before being diagnosed with ADHD. I started building nearOrbit to help me finish what I
+                start. I hope it might help you too 😊</h5>
+        </div>
     </div>
-    <div>
-        I started building nearOrbit to help me finish what I start. I hope it might help you too 😊
-    </div>
-    <div>
-        <button @click="aboutButtonClick()">🦘 Learn more</button>
-    </div>
+    <br />
+    <button @click="aboutButtonClick()">🦘 Learn more</button>
 </template>
   
 <script>

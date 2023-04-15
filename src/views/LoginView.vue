@@ -1,16 +1,16 @@
 <template>
-    <LoginDialog />
+    <LoginMain />
 </template>
 
 <script>
 
 // @ is an alias to /src
-import LoginDialog from '@/components/LoginDialog.vue'
+import LoginMain from '@/components/LoginMain.vue'
 
 export default {
     name: 'LoginView',
     components: {
-        LoginDialog
+        LoginMain
     }
 }
 </script>
