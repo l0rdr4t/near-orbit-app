@@ -15,6 +15,7 @@
     <div>
         <h2>welcome to nearOrbit.app</h2>
         <button @click="oauth2()">Login with Discord</button>
+        <button @click="showToken()">Show token {{ $store.state.token }}</button>
     </div>
 </template>
 
@@ -38,6 +39,9 @@ export default {
                         replace: false
                     }
                 });
+        },
+        showToken() {
+            alert('.')
         }
     }
 }
