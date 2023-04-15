@@ -1,4 +1,5 @@
 # near-orbit-app
+A distraction-free app to help you get things done. **Coming soon.**
 
 ## Project setup
 ```
