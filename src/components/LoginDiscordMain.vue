@@ -15,7 +15,7 @@ const req = {
     state: route.query.state
 }
 onMounted(async () => {
-    const res = await axios.post('http://localhost:8888/.netlify/functions/handleAuth', req).then(alert("done."));
+    const res = await axios.post('https://nearorbit.app/.netlify/functions/handleAuth', req).then(alert("done."));
     alert(res.toString());
 })
 
