@@ -26,7 +26,8 @@ export default {
             this.$auth
                 .oauth2('discord', {
                     params: {
-                        client_id: '1096086421221150812'
+                        client_id: '1096086421221150812',
+                        prompt: 'none'
                         },
                     remember: 'Rob',
                     staySignedIn: true,
