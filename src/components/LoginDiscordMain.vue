@@ -1,28 +1,22 @@
 <template>
     <div>
-        <h2 @click="this.oauth2()">Authenticating...</h2>
+        <h2>Authenticating...</h2>
     </div>
 </template>
 
-<script>
+<script setup>
+import axios from 'axios';
+import { useRoute } from "vue-router";
+import { onMounted } from 'vue';
 
-export default {
-    name: 'LoginDiscordMain',
-    methods: {
-        oauth2() {
-            this.$auth
-                .oauth2('discord', {
-                    url: 'https://discord.com/api/oauth2/token?grant_type=authorization_code',
-                    code: true,
-                    data: {
-                        client_id: 109608642122115081,
-                        client_secret: 'LRRp2JELpmuiXsYIhLEhgAbSeHUl5njA',
-                        redirect_uri: 'https://nearorbit.app/login',
-                        code: this.$route.query.code
-                    },
-                    state: this.$route.query.state
-                });
-        }
-    }
+const route = useRoute()
+const req = {
+    code: route.query.code,
+    state: route.query.state
 }
+onMounted(async () => {
+    const res = await axios.post('http://localhost:8888/.netlify/functions/handleAuth', req).then(alert("done."));
+    alert(res.toString());
+})
+
 </script>
