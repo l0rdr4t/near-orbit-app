@@ -13,6 +13,9 @@
     <div>
         I started building nearOrbit to help me finish what I start. I hope it might help you too 😊
     </div>
+    <div>
+        <button @click="aboutButtonClick()">🦘 Learn more</button>
+    </div>
 </template>
   
 <script>
@@ -20,6 +23,11 @@ export default {
     name: 'AboutMain',
     props: {
         msg: String
+    },
+    methods: {
+        aboutButtonClick() {
+            alert("Not implemented.");
+        }
     }
 }
 </script>
