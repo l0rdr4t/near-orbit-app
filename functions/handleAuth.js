@@ -36,6 +36,7 @@ exports.handler = async function (event, context) {
             statusCode: 200,
             body: JSON.stringify({
                 message: 'OAuth secret and authorization code handled',
+                res: res
             }),
         };
     } else {
@@ -43,6 +44,7 @@ exports.handler = async function (event, context) {
             statusCode: res.status,
             body: JSON.stringify({
                 message: res.statusText,
+                res: res
             }),
         };
     }
