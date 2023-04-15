@@ -1,33 +1,23 @@
 <template>
     <div>
-        <span
-            v-show="!$auth.ready()"
-        >
-            Loading...
-        </span>
-
-        <span
-            v-show="$auth.ready()"
-        >
-            Ready!
-        </span>
-    </div>
-    <div>
-        <h2>welcome to nearOrbit.app</h2>
-        <button @click="oauth2()">Login with Discord</button>
+        <h2 @click="this.oauth2()">Authenticating...</h2>
     </div>
 </template>
 
 <script>
+
 export default {
-    name: 'LoginMain',
+    name: 'LoginDiscordMain',
     methods: {
         oauth2() {
             this.$auth
                 .oauth2('discord', {
-                    url: 'auth/discord',
+                    url: 'https://discord.com/api/oauth2/token?grant_type=authorization_code',
                     code: true,
-                    body: {
+                    data: {
+                        client_id: 109608642122115081,
+                        client_secret: 'LRRp2JELpmuiXsYIhLEhgAbSeHUl5njA',
+                        redirect_uri: 'https://nearorbit.app/login',
                         code: this.$route.query.code
                     },
                     state: this.$route.query.state

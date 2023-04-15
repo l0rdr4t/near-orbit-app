@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import LoginDiscordView from '../views/LoginDiscordView.vue'
 
 const routes = [
   {
@@ -15,7 +16,7 @@ const routes = [
   {
     path: '/login/discord',
     name: 'login discord',
-    component: () => import(/* webpackChunkName: "loginDiscord" */ '../views/LoginDiscordView.vue')
+    component: LoginDiscordView
   },
   {
     path: '/about',

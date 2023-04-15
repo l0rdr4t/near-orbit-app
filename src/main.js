@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import '@picocss/pico'
-import axios                 from 'axios';
+import axios                  from 'axios';
 import {createAuth}          from './custom-modules/websanova/vue-auth';
 import driverAuthBearer      from './custom-modules/websanova/vue-auth/dist/drivers/auth/bearer.esm.js';
 import driverHttpAxios       from './custom-modules/websanova/vue-auth/dist/drivers/http/axios.1.x.esm.js';
@@ -12,8 +12,8 @@ import driverOAuth2Discord    from './custom-modules/websanova/vue-auth/dist/dri
 
 var auth = createAuth({
     plugins: {
-        http: axios,
-        router: router
+        router: router,
+        http: axios
     },
     drivers: {
         http: driverHttpAxios,
