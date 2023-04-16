@@ -1,5 +1,5 @@
 <template>
-    <LoginDiscordMain />
+    <LoginDiscordMain @token-response="$emit($event)" />
 </template>
 
 <script>

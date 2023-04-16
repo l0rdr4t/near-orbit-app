@@ -31,12 +31,14 @@ exports.handler = async function (event, context) {
         }
     });
 
+    const resStr = JSON.stringify(res);
+
     if (res.status == '200') {
         return {
             statusCode: 200,
             body: JSON.stringify({
                 message: 'OAuth secret and authorization code handled',
-                res: res
+                res: resStr
             }),
         };
     } else {
@@ -44,7 +46,7 @@ exports.handler = async function (event, context) {
             statusCode: res.status,
             body: JSON.stringify({
                 message: res.statusText,
-                res: res
+                res: resStr
             }),
         };
     }
