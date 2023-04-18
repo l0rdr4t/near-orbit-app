@@ -23,7 +23,7 @@ exports.handler = async function (event, context) {
         redirect_uri: 'https://nearorbit.app/login/discord',
         code: code,
         state: state
-    })).toString();
+    }));
 
     const res = await axios.post('https://discord.com/api/oauth2/token', data, {
         headers: {

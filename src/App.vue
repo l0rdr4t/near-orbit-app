@@ -20,3 +20,11 @@ main, footer {
   text-align: center;
 }
 </style>
+
+<script>
+export default {
+  created() {
+    // this.$store.state.auth_target = process.env.AUTH_TARGET;
+  }
+}
+</script>

@@ -14,6 +14,7 @@ export default {
             loading: false,
             post: null,
             error: null,
+            authTarget: process.env.VUE_APP_AUTH_TARGET
         }
     },
     created() {
@@ -36,19 +37,22 @@ export default {
                 code: this.$route.query.code,
                 state: this.$route.query.state
             }
-            // axios.post('https://nearorbit.app/.netlify/functions/handleAuth', req)
-            axios.post('http://localhost:8888/.netlify/functions/handleAuth', req)
+
+            alert("authTarget: " + this.authTarget);
+            alert("$route.query.code: " + req.code);
+            alert("$route.query.state: " + req.state);
+            // axios.post('', req)
+            axios.post(this.authTarget, req)
                 .then(response => {
                     const token = response.data;
-                    alert(token);
+                    alert("success: " + token);
                     this.$store.commit('setToken', token);
-                    window.close();
                 })
                 .catch(e => {
                     const token = e.toString();
-                    alert(token);
-                    window.close();
-                })
+                    alert("error: " + token);
+                });
+            // window.close();
         }
     }
 }
