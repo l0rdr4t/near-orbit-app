@@ -2,6 +2,7 @@
 
 const { default: axios } = require("axios");
 const oauthSecret = process.env.DISCORD_SECRET;
+const oauthRedirect = process.env.DISCORD_REDIRECT;
 
 exports.handler = async function (event, context) {
     if (event.httpMethod !== 'POST') {
@@ -16,7 +17,7 @@ exports.handler = async function (event, context) {
         grant_type: 'authorization_code',
         client_id: '1096086421221150812',
         client_secret: oauthSecret,
-        redirect_uri: 'http://localhost:8888/login/discord',
+        redirect_uri: oauthRedirect,
         code: code,
         state: state
     };
