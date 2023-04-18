@@ -25,7 +25,7 @@ exports.handler = async function (event, context) {
         state: state
     }));
 
-    const res = await axios.post('https://discord.com/api/oauth2/token', data, {
+    const res = await axios.post('https://discord.com/api/oauth2/token', data.toString(), {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
