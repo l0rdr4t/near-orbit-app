@@ -38,14 +38,13 @@ export default {
             }
             axios.post(this.authTarget, req)
                 .then(response => {
-                    const token = response.data;
-                    this.$store.commit('setToken', token);
+                    localStorage.setItem('discordToken', JSON.stringify(response));
                 })
                 .catch(e => {
                     const token = e.toString();
                     alert("error: " + token);
                 });
-            window.close();
+            // window.close();
         }
     }
 }

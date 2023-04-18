@@ -2,19 +2,19 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    token: {access_token: "not yet logged in."},
+    token: { data: { access_token: "not yet logged in." } },
     auth_target: "loading..."
   },
   getters: {
   },
   mutations: {
-    setToken (state, payload) {
+    setToken(state, payload) {
       state.token = payload;
     },
-    setAuthTarget (state, payload) {
+    setAuthTarget(state, payload) {
       state.auth_target = payload;
     },
-    
+
   },
   actions: {
   },
